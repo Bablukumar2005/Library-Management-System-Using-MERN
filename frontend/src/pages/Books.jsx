@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import api from '../api/axios';
 import { Search, Filter, Loader2, BookOpen } from 'lucide-react';
 import toast from 'react-hot-toast';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 
 const Books = () => {
@@ -9,20 +10,22 @@ const Books = () => {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
 
-  useEffect(() => {
-    fetchBooks();
-  }, [search]);
-
-  const fetchBooks = async () => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const fetchBooks = useCallback(async () => {
     try {
       const { data } = await api.get(`/books${search ? `?keyword=${search}` : ''}`);
       setBooks(data);
+    // eslint-disable-next-line no-unused-vars
     } catch (error) {
       toast.error('Failed to fetch books');
     } finally {
       setLoading(false);
     }
-  };
+  });
+
+  useEffect(() => {
+    fetchBooks();
+  }, [fetchBooks, search]);
 
   const handleIssue = async (bookId) => {
     try {

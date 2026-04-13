@@ -52,7 +52,7 @@ const createBook = async (req, res) => {
       isbn,
       totalCopies,
       availableCopies: totalCopies,
-      coverImage: coverImage || 'https://via.placeholder.com/150',
+      coverImage: coverImage || 'https://placehold.co/150x150',
     });
 
     const createdBook = await book.save();

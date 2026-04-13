@@ -31,7 +31,7 @@ const bookSchema = mongoose.Schema(
     },
     coverImage: {
       type: String, // URL starting to an image
-      default: 'https://via.placeholder.com/150',
+      default: 'https://placehold.co/150x150',
     },
   },
   {

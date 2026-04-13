@@ -15,6 +15,7 @@ const MyBooks = () => {
     try {
       const { data } = await api.get('/transactions/my');
       setTransactions(data);
+    // eslint-disable-next-line no-unused-vars
     } catch (error) {
       toast.error('Failed to fetch transactions');
     } finally {
@@ -59,7 +60,7 @@ const MyBooks = () => {
                     <td className="px-6 py-4">
                       <div className="flex items-center">
                         <div className="w-10 h-12 bg-gray-200 dark:bg-gray-700 rounded mr-3 overflow-hidden">
-                          <img src={t.bookId?.coverImage || 'https://via.placeholder.com/150'} alt="Cover" className="w-full h-full object-cover" />
+                          <img src={t.bookId?.coverImage || 'https://placehold.co/150x150'} alt="Cover" className="w-full h-full object-cover" />
                         </div>
                         <div>
                           <p className="text-sm font-medium text-gray-900 dark:text-white">{t.bookId?.title}</p>

@@ -15,6 +15,7 @@ const AdminBooks = () => {
     try {
       const { data } = await api.get('/books');
       setBooks(data);
+    // eslint-disable-next-line no-unused-vars
     } catch (error) {
       toast.error('Failed to fetch books');
     } finally {
@@ -28,6 +29,7 @@ const AdminBooks = () => {
         await api.delete(`/books/${id}`);
         toast.success('Book deleted successfully');
         fetchBooks();
+      // eslint-disable-next-line no-unused-vars
       } catch (error) {
         toast.error('Failed to delete book');
       }

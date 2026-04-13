@@ -1,8 +1,10 @@
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
 import { BookOpen, Users, Clock, AlertCircle } from 'lucide-react';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 
+// eslint-disable-next-line no-unused-vars
 const StatCard = ({ title, value, icon: Icon, color, delay }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
@@ -65,7 +67,7 @@ const Dashboard = () => {
             <div className="flex items-center justify-between py-3 border-b border-gray-100 dark:border-dark-border gap-2">
                 <div className="flex items-center">
                   <div className="w-12 h-16 bg-gray-200 dark:bg-gray-700 rounded mr-3 overflow-hidden shadow">
-                    <img src="https://via.placeholder.com/150" alt="Cover" className="w-full h-full object-cover" />
+                    <img src="https://placehold.co/150x150" alt="Cover" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <p className="text-sm font-medium text-gray-900 dark:text-white">Clean Code</p>
